@@ -16,4 +16,10 @@ class Product extends Model
        return $this->belongsToMany('App\User')->withPivot('quantity');
     }
 
+    public function scopeProduct_name($query,$product_name) {
+      if($product_name) {
+        return $query->orWhere ('product_name','LIKE',"%$product_name%");
+      }
+    }
+
 }

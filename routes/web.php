@@ -34,7 +34,7 @@ Route::post('/contacto', 'contactoController@crear');
 
 
 
-Route::get('/listaProducto', 'ProductsController@listado');
+Route::get('/listaProducto', 'ProductsController@listado')->name('products.listado');
 
 Route::get('/crearProducto', function(){
   return view('crearProducto');
@@ -62,3 +62,7 @@ Route::get('/carrito/{user_id}/{product_id}', 'carritoController@store');
 Route::get('/carrito/{user_id}', 'carritoController@show');
 
 Route::get('/borrarCarrito/{user_id}/{product_id}', 'carritoController@destroy');
+
+Route::get('/admin/listado', 'adminController@listado');
+
+Route::get('/detalleServicio/{id}', 'servicesController@detalle')->name('detalleServicio');

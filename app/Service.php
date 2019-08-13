@@ -8,7 +8,7 @@ class Service extends Model
 {
   public $table = "services";
   public $primaryKey = "id";
-  public $timestamps = false;
+  //public $timestamps = ();
   public $guarded = [];
 
 

@@ -6,9 +6,10 @@
 <div class="container">
 <div class="row">
 <div class="page-header">
-<h3>
-Busqueda de servicios
-</h3>
+
+  <h1>Lista de servicios</h1>
+
+
 <div class="formulario">
   {{Form::open(['route' => 'service.listado', 'method' => 'GET', 'class' => 'form-inline pull-right']) }}
 
@@ -22,35 +23,32 @@ Busqueda de servicios
 <button type="submit" class="btn btn-primary"  aria-pressed="false" autocomplete="off">
   volver
 </button>
+
 <br>
 <br>
 
 {{Form::close()}}
-<br><br>
-<h1>Lista de servicios</h1>
-<div class="row">
-  @foreach($service as $servic)
-  <div class="col-md-3">
-    <figure class="card card-servic">
-    <div class="img-wrap">
-      <img src="{{Storage::url($servic->image)}}" class="card-img-top-dimension">
-    </div>
-    <figcaption class="info-wrap">
-      <h6 class="title text-dots">{{$servic->service_name}}</h6>
-      <h6 class="title text-dots">{{$servic->contact_phone}}</h6>
-      <h7 class="title text-dots">{{$servic->address}}</h7>
-      <label class="title text-dots">{{$servic->services_description}}</label>
-    </figcaption>
-    <div class="card-footer">
-      <small class="text-muted">Contactate para conocer más sobre el servicio</small>
-    </div>
-  </figure> <!-- card // -->
-</div> <!-- col // -->
 
-@endforeach
 </div>
+</div>
+<br><br>
+<div class="row">
+  <div class="card-columns">
+    @foreach($service as $serv)
+    <a href="{{ route('detalleServicio', $serv->id) }}">
+    <div class="card p-3">
+      <img class="card-img-top" src="{{Storage::url($serv->image)}}" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">{{$serv->brand}}</p>
+        <h3 class="card-title">{{$serv->service_name}}</h3>
+      </div>
+    </div>
+    </a>
+    @endforeach
+  </div>
+</div>
+
 {{$service->render()}}
-</div>
 </div>
 </div>
 

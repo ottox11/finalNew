@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-     <link rel="stylesheet" href="css/styles.css">
+     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <!-- <link rel="stylesheet" href="css/navbar.css"> -->
     <!-- <link rel="stylesheet" href="css/styleForm.css">
     <link rel="stylesheet" href="css/productsAdmin.css">
@@ -59,6 +59,13 @@
                                 </li>
                             @endif
                         @else
+                            @if ( Auth::user()->user_role == 'admin' )
+
+                              <li class="nav-item active">
+                                  <a class="nav-link" href="{{ url('admin/listado') }}">Opciones Admin <span class="sr-only">(current)</span></a>
+                              </li>
+
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

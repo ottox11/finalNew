@@ -46,7 +46,10 @@ class servicesController extends Controller
       return back()->with('status', 'Datos cargados correctamente');
     }
 
-
+    public function detalle($slug){
+    $service = Service::where('id', $slug)->first();
+    return view('detalleServicio', compact('service'));
+    }
 
 
 }
