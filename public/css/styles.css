@@ -106,3 +106,23 @@ height: auto;
   text-align: center;
   background-color:rgba(255,255,255,0.5);
 }
+
+#imgMascota {
+  max-width: 10%;
+    height: auto;
+    background-color: rgba(255,255,255);
+}
+
+#cardcart {
+  background-color: rgba(255,255,255,0.8);
+}
+
+#botoncito {
+  justify-content:flex-end;
+}
+
+#finCompra {
+  display: block;
+  margin-left: auto;
+margin-right: auto;
+}

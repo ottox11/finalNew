@@ -1,34 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="container">
+<br>  <h1 class="tituloLista">Carrito de Compras</h1>
+<hr>
+
 @if (session()->has('status'))
 <div class="alert alert-success" role="alert">{{ session('status')}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
   <span aria-hidden="true">&times;</span>
 </button></div>
 @endif
 
-<div class="row">
-  @foreach($products as $product)
-  <div class="col-md-3">
-  	<figure class="card card-product">
-		<div class="img-wrap">
-			<img src="{{Storage::url($product->image)}}" class="card-img-top-dimension">
+@foreach($products as $product)
+<ul class="list-unstyled">
+  <li class="media">
+    <img src="{{Storage::url($product->image)}}" class="mr-3" id="imgMascota" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{$product->brand}}</h5>
+      <p>{{$product->product_name}}</p>
+      <h4>${{$product->price_unit}}</h4>
+        <a href="/borrarCarrito/{{auth()->user()->id}}/{{$product->id}}" class="btn btn-primary">Eliminar del carro de compras</a>
+    </div>
+  </li>
 
-		</div>
-		<figcaption class="info-wrap">
-			<h5 class="title text-dots"><a href="#">{{$product->brand}}</a></h5>
-      <h6 class="title text-dots"><a href="#">{{$product->product_name}}</a></h6>
-			<div class="action-wrap">
-				<a href="/borrarCarrito/{{auth()->user()->id}}/{{$product->id}}" class="btn btn-primary btn-sm float-right"> Eliminar </a>
-				<div class="price-wrap h5">
-					<span class="price-new">{{$product->price_unit}}</span>
-
-				</div> <!-- price-wrap.// -->
-			</div> <!-- action-wrap -->
-		</figcaption>
-	</figure> <!-- card // -->
-</div> <!-- col // -->
+</ul>
 @endforeach
+<br>
+<br>
+<div class="alert alert-success" role="alert"><h2>Total: ${{Auth::user()->products->sum('price_unit')}}</h2>
 </div>
+<button type="button" id="finCompra" class="btn btn-primary" onClick="alert('¡Ha finalidado su compra!')">Finalizar Compra</button>
 
 @endsection
