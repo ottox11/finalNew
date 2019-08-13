@@ -34,6 +34,26 @@
   .card-product .title {
     margin-top: 0; }
 
+
+
+
+    .card-servic .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border-top: 1px solid #eee; }
+    .card-product .action-wrap {
+    padding-top: 4px;
+    margin-top: 4px; }
+    .card-product .bottom-wrap {
+    padding: 15px;
+    border-top: 1px solid #eee; }
+    .card-product .title {
+    margin-top: 0; }
+
+
+
+
+
     .card-img-top-dimension {
 
      display: block;

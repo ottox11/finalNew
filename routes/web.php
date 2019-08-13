@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/service', 'servicesController@listado');
+Route::get('/service', 'servicesController@listado')->name('service.listado');
 
 
 Route::get('/crearService', function(){
@@ -23,6 +23,15 @@ Route::get('/crearService', function(){
 });
 
 Route::post('/crearService', 'servicesController@crear');
+
+Route::get('/terminosCondiciones', 'terminosCondicionesController@vista');
+Route::get('/politicas', 'politicasController@vista');
+Route::get('/contacto', function(){
+  return view('contacto');
+});
+
+Route::post('/contacto', 'contactoController@crear');
+
 
 
 Route::get('/listaProducto', 'ProductsController@listado');

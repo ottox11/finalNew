@@ -9,7 +9,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
-<br>  <h1 class="text-center">Lista de Productos</h1>
+<br>  <h1>Lista de productos</h1>
 <hr>
 
 

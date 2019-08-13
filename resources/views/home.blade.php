@@ -64,7 +64,7 @@
 <div class="card-body">
 <h5 class="card-title">Veterinarios</h5>
 <p class="card-text">Brindamos una extensa red de clinicas y consultorios veterinarios que me mejor se adapte a cada cliente según su mascota.</p>
-<a href="#" class="btn btn-primary">Ingresa al directorio</a>
+<a href="{{ url('/service') }}" class="btn btn-primary">Ingresa al directorio</a>
 </div>
 </div>
 </div>
@@ -75,7 +75,7 @@
 <div class="card-body">
 <h5 class="card-title">Alimento de mascotas</h5>
 <p class="card-text">Acá podes comprar el alimento que tu amigo necesita, entrá y adquirí productos de las mejores marcas.</p>
-<a href="#" class="btn btn-primary">Ingresa a compras</a>
+<a href="{{ url('/listaProducto') }}" class="btn btn-primary">Ingresa a compras</a>
 </div>
 </div>
 </div>
@@ -86,7 +86,7 @@
 <div class="card-body">
 <h5 class="card-title">Cuidadores de mascotas</h5>
 <p class="card-text">¿Te vas de viaje? No te preocupes por tu mascota, contamos con una extensa red de anfitriones que pueden encargarse de el.</p>
-<a href="#" class="btn btn-primary">Ingresa al directorio</a>
+<a href="{{ url('/service') }}" class="btn btn-primary">Ingresa al directorio</a>
 </div>
 </div>
 </div>
@@ -99,7 +99,7 @@
       <div class="card-body">
       <h5 class="card-title">Accesorios para mascotas</h5>
       <p class="card-text">Mima a tu mascota con nuestra amplia seleccion de juguetes pensados para el, asi como multiples accesorios que pueden hacer su vida un poco mas feliz.</p>
-      <a href="#" class="btn btn-primary">Ingresa a compras</a>
+      <a href="{{ url('/listaProducto') }}" class="btn btn-primary">Ingresa a compras</a>
       </div>
       </div>
       </div>
@@ -110,7 +110,7 @@
         <div class="card-body">
         <h5 class="card-title">Paseadores</h5>
         <p class="card-text">Contamos con todo un grupo de personas dedicadas a pasear a tu mascota y disfrutar del tiempo que desees de un lindo paseo para tu mascota.</p>
-        <a href="#" class="btn btn-primary">Ingresa al directorio</a>
+        <a href="{{ url('/service') }}" class="btn btn-primary">Ingresa al directorio</a>
         </div>
         </div>
       </div>
@@ -121,7 +121,7 @@
         <div class="card-body">
         <h5 class="card-title">Mascotas perdidas</h5>
         <p class="card-text">En esta sección podras encontrar números de emergencia, correos eléctronicos y otras formas de comunicación para tratar los temas de extravío de mascotas.</p>
-        <a href="#" class="btn btn-primary">Ingresa al directorio</a>
+        <a href="{{ url('/service') }}" class="btn btn-primary">Ingresa al directorio</a>
         </div>
         </div>
       </div>

@@ -12,11 +12,19 @@ use Illuminate\Support\Facades\Validator;
 
 class servicesController extends Controller
 {
-  public function listado() {
-    $service = Service::paginate(6);
-    $vac = compact("service");
-    return view("service",['service' => $service]);
-  }
+
+
+  public function listado(Request $request) {
+      $service_name = $request->get('service_name');
+      $service = Service::orderBy('id','DESC')
+      ->service_name($service_name)
+      ->paginate(20);
+      $vac = compact("service");
+      return view("service",['service' => $service]);
+    }
+
+
+
 
   public function crear(Request $req){
         $this->validate($req, [

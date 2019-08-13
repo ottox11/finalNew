@@ -20,8 +20,14 @@
     <!-- <link rel="stylesheet" href="css/styleForm.css">
     <link rel="stylesheet" href="css/productsAdmin.css">
 
+<<<<<<< HEAD
     <script src="./js/app.js"></script> -->
     <title>@yield('title', 'Mundo Mascotas')</title>
+=======
+
+    <script src="js/app.js"></script>
+
+>>>>>>> aed57c99e8652961eafffed474db9d2a7a9636f1
 
 </head>
 <body>
@@ -46,11 +52,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresa') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrate') }}</a>
                                 </li>
                             @endif
                         @else
@@ -88,5 +94,56 @@
             @yield('content')
         </main>
     </div>
+
+    <footer>
+      <footer class="site-footer">
+     <div class="container">
+       <div class="row">
+         <div class="col-sm-12 col-md-6">
+           <h6>Sobre nosotros</h6>
+           <p class="text-justify">
+             Nos encantan los animales, de todas las razas y de todos los colores. Queremos transmitir esta ilusión y amor a través de la red,
+             ofreciendo a nuestros clientes precios inmejorables en un lugar en el que navegar es fácil, y que ha sido diseñado exclusivamente
+             para la comodidad del usuario. Queremos hacer que el momento de compra de la comida de tu fiel amigo, sea rápido y eficaz, y que tú
+             puedas dedicar ése tiempo a estar con tu mascota.Queremos que ahorres dinero en tus compras, y que lo gastes en lo que más te guste.
+           </p>
+         </div>
+
+         <div class="col-xs-6 col-md-3">
+           <h6>Mundo mascotas links</h6>
+           <ul class="footer-links">
+             <li><a href="{{ url('/') }}">Inicio</a></li>
+             <li><a href="{{ url('/service') }}">Servicios</a></li>
+             <li><a href="{{ url('/listaProducto') }}">Productos</a></li>
+             <li><a href="{{ url('/terminosCondiciones') }}">Términos y condiciones</a></li>
+             <li><a href="{{ url('/politicas') }}">Políticas de privacidad</a></li>
+             <li><a href="{{ url('/contacto') }}">Contáctanos</a></li>
+           </ul>
+         </div>
+
+         <div class="col-xs-6 col-md-3">
+           <h6>Nuestra sucursal</h6>
+           <ul class="footer-links">
+             <p>Av. Córdoba 1557 - CABA, Buenos Aires</p>
+             <p>info@mundomascota.com</p>
+             <p>+54 (011)5365-5309</p>
+           </ul>
+         </div>
+       </div>
+       <hr>
+     </div>
+     <div class="container">
+       <div class="row">
+         <div class="col-md-8 col-sm-6 col-xs-12">
+           <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+        <a href="#">mundoMascota</a>.
+           </p>
+         </div>
+
+
+       </div>
+     </div>
+</footer>
+
 
 </html>
