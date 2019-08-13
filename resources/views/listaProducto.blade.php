@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="{!! asset('css/productsAdmin.css') !!}">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
-<br>  <h1>Lista de productos</h1>
+<br>  <h1 class="tituloLista">Lista de Productos</h1>
 <hr>
 
 

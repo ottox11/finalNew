@@ -10,6 +10,7 @@
 </button></div>
 @endif
 
+
           <div class="product-block">
             <img src="{{Storage::url($product->image)}}">
           </div>

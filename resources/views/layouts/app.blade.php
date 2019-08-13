@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+     <!-- <script src="{{ asset('js/app.js') }}" defer></script>  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+     <link rel="stylesheet" href="css/styles.css">
     <!-- <link rel="stylesheet" href="css/navbar.css"> -->
     <!-- <link rel="stylesheet" href="css/styleForm.css">
     <link rel="stylesheet" href="css/productsAdmin.css">
@@ -23,11 +23,10 @@
 <<<<<<< HEAD
     <script src="./js/app.js"></script> -->
     <title>@yield('title', 'Mundo Mascotas')</title>
-=======
 
-    <script src="js/app.js"></script>
+    <!-- <script src="js/app.js"></script> -->
 
->>>>>>> aed57c99e8652961eafffed474db9d2a7a9636f1
+
 
 </head>
 <body>
@@ -81,7 +80,7 @@
                             <li>
                               <div class="mini-cart">
                                 <a href="/carrito/{{Auth::user()->id}}"
-                                 class="btn btn-default mini-cart-button">Carrito</a>
+                                 class="btn btn-default mini-cart-button"><img src="{{ asset('img/carrito.svg') }}" alt=""></a>
                               </div>
                             </li>
                         @endguest
@@ -94,13 +93,15 @@
             @yield('content')
         </main>
     </div>
-
+    <br>
+    <br>
+    <br>
     <footer>
       <footer class="site-footer">
      <div class="container">
        <div class="row">
          <div class="col-sm-12 col-md-6">
-           <h6>Sobre nosotros</h6>
+           <h5><strong>Sobre Nosotros</strong></h5>
            <p class="text-justify">
              Nos encantan los animales, de todas las razas y de todos los colores. Queremos transmitir esta ilusión y amor a través de la red,
              ofreciendo a nuestros clientes precios inmejorables en un lugar en el que navegar es fácil, y que ha sido diseñado exclusivamente
@@ -110,7 +111,7 @@
          </div>
 
          <div class="col-xs-6 col-md-3">
-           <h6>Mundo mascotas links</h6>
+           <h5><strong>Mundo Mascotas Links</strong></h5>
            <ul class="footer-links">
              <li><a href="{{ url('/') }}">Inicio</a></li>
              <li><a href="{{ url('/service') }}">Servicios</a></li>
@@ -122,11 +123,11 @@
          </div>
 
          <div class="col-xs-6 col-md-3">
-           <h6>Nuestra sucursal</h6>
+           <h5><strong>Nuestra sucursal</strong></h5>
            <ul class="footer-links">
-             <p>Av. Córdoba 1557 - CABA, Buenos Aires</p>
+             <p>Av. SiempreViva 1000 - CABA, Buenos Aires</p>
              <p>info@mundomascota.com</p>
-             <p>+54 (011)5365-5309</p>
+             <p>+54 (011)22443491</p>
            </ul>
          </div>
        </div>
@@ -135,7 +136,7 @@
      <div class="container">
        <div class="row">
          <div class="col-md-8 col-sm-6 col-xs-12">
-           <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+           <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by
         <a href="#">mundoMascota</a>.
            </p>
          </div>
