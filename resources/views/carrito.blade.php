@@ -1,17 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="{!! asset('css/productsAdmin.css') !!}">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="container">
-<br>  <h1 class="text-center">Lista de Productos</h1>
-<hr>
-
+@if (session()->has('status'))
+<div class="alert alert-success" role="alert">{{ session('status')}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button></div>
+@endif
 
 <div class="row">
   @foreach($products as $product)
@@ -25,7 +19,7 @@
 			<h5 class="title text-dots"><a href="#">{{$product->brand}}</a></h5>
       <h6 class="title text-dots"><a href="#">{{$product->product_name}}</a></h6>
 			<div class="action-wrap">
-				<a href="{{ route('detalleProducto', $product->id) }}" class="btn btn-primary btn-sm float-right"> Ordenar </a>
+				<a href="/borrarCarrito/{{auth()->user()->id}}/{{$product->id}}" class="btn btn-primary btn-sm float-right"> Eliminar </a>
 				<div class="price-wrap h5">
 					<span class="price-new">{{$product->price_unit}}</span>
 
@@ -36,6 +30,5 @@
 </div> <!-- col // -->
 @endforeach
 </div>
-{!! $products->render() !!}
-<!--container end-->
+
 @endsection

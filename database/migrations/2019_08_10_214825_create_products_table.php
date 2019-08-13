@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->decimal('price_unit', 8, 2);
             $table->string('brand');
             $table->string('image');
+            $table->integer('stock');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MundoMascota extends Migration
+class AddRemeberTokenToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,9 @@ class MundoMascota extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->rememberToken();
+        });
     }
 
     /**
@@ -23,6 +25,8 @@ class MundoMascota extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+           $table->dropRememberToken();
+        });
     }
 }

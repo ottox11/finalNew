@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'lastName', 'email', 'password', 'address', 'image', 'created_at', 'updated_at'
+        'name', 'last_name', 'email', 'password', 'address', 'image', 'created_at', 'updated_at'
     ];
 
     /**
@@ -37,4 +37,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function products() {
+
+       return $this->belongsToMany('App\Product')->withPivot('quantity');
+    }
 }

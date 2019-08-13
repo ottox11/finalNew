@@ -45,3 +45,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/detalleProducto/{id}', 'ProductsController@detalle')->name('detalleProducto');
+
+Route::get('/carrito/{user_id}/{product_id}', 'carritoController@store');
+
+Route::get('/carrito/{user_id}', 'carritoController@show');
+
+Route::get('/borrarCarrito/{user_id}/{product_id}', 'carritoController@destroy');
+// https://www.youtube.com/watch?v=_axDvAFgiI8
