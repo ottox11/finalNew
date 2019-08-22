@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 200);
             $table->string('address', 100);
             $table->string('image');
+            $table->string('user_role')->default('customer');
             $table->timestamps();
         });
     }

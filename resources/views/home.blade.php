@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Todo en un sólo lugar</div>
+                <div class="card-header">Todo para tu mascota, en un sólo lugar</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -62,7 +62,7 @@
 <div class="card" style="width: 18rem;">
 <img src="{{ asset('img/veterinario.jpg') }}" class="card-img-top" alt="...">
 <div class="card-body">
-<h5 class="card-title">Veterinarios</h5>
+<h5 class="card-title">Servicios</h5>
 <p class="card-text">Brindamos una extensa red de clinicas y consultorios veterinarios que me mejor se adapte a cada cliente según su mascota.</p>
 <a href="{{ url('/service') }}" class="btn btn-primary">Ingresa al directorio</a>
 </div>

@@ -8,34 +8,63 @@
 
 <!------ Include the above in your HEAD tag ---------->
 
+
 <div class="container">
-<br>  <h1 class="tituloLista">Lista de Productos</h1>
-<hr>
 
+  <div class="row">
 
-<div class="row">
-  @foreach($products as $product)
-  <div class="col-md-3">
-  	<figure class="card card-product">
-		<div class="img-wrap">
-			<img src="{{Storage::url($product->image)}}" class="card-img-top-dimension">
+    <div class="page-title">
 
-		</div>
-		<figcaption class="info-wrap">
-			<h5 class="title text-dots"><a href="#">{{$product->brand}}</a></h5>
-      <h6 class="title text-dots"><a href="#">{{$product->product_name}}</a></h6>
-			<div class="action-wrap">
-				<a href="{{ route('detalleProducto', $product->id) }}" class="btn btn-primary btn-sm float-right"> Ordenar </a>
-				<div class="price-wrap h5">
-					<span class="price-new">{{$product->price_unit}}</span>
+    <br>  <h1 class="card-title">Lista de Productos</h1>
+    <hr>
 
-				</div> <!-- price-wrap.// -->
-			</div> <!-- action-wrap -->
-		</figcaption>
-	</figure> <!-- card // -->
-</div> <!-- col // -->
-@endforeach
+    <div class="formulario">
+      {{Form::open(['route' => 'products.listado', 'method' => 'GET', 'class' => 'form-inline pull-right']) }}
+
+    </div>
+    <div class="form-group">
+    {{Form::text('product_name', null, ['class' => 'form-control', 'placeholder'=> 'nombre del producto'])}}
+    </div>
+    <button type="submit" class="btn btn-primary"  aria-pressed="false" autocomplete="off">
+      Buscar
+    </button>
+    <button type="submit" class="btn btn-primary"  aria-pressed="false" autocomplete="off">
+      volver
+    </button>
+
+    <br>
+    <br>
+
+    {{Form::close()}}
+
+    </div>
+
+    <div class="row">
+      <div class="card-columns">
+        @foreach($product as $prod)
+        <a href="{{ route('detalleProducto', $prod->id) }}">
+        <div class="card p-3">
+          <img class="card-img-top" src="{{Storage::url($prod->image)}}" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">{{$prod->brand}}</p>
+            <h3 class="card-title">{{$prod->product_name}}</h3>
+          </div>
+          <div class="card-footer">
+            <h5 class="price-new" href="" >AR $ {{$prod->price_unit}}</h5>
+          </div>
+        </div>
+        </a>
+        @endforeach
+      </div>
+    </div>
+  </div>
 </div>
-{!! $products->render() !!}
+
+
+
+
+
+
+{!! $product->render() !!}
 <!--container end-->
 @endsection

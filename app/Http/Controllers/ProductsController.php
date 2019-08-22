@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -11,11 +12,17 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductsController extends Controller
 {
-  public function listado(){
-  $products = Product::paginate(12);
-  $vac = compact("products");
-  return view("listaProducto", ['products'=> $products]);
+  public function listado(Request $request){
+  $product_name = $request->get('product_name');
+  $product = Product::orderBy('id','DESC')
+  ->product_name($product_name)
+  ->paginate(6);
+  $vac = compact("product");
+  return view("listaProducto", ['product'=> $product]);
 }
+
+
+
 
   public function crear(Request $req){
 
@@ -46,5 +53,13 @@ class ProductsController extends Controller
   public function detalle($slug){
   $product = Product::where('id', $slug)->first();
   return view('detalleProducto', compact('product'));
+
   }
+
+  public function destroy($product_id)
+  {
+
+  }
+
+
 }

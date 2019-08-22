@@ -12,15 +12,15 @@
 </button></div>
 @endif
 
-@foreach($products as $product)
+@foreach($product as $prod)
 <ul class="list-unstyled">
   <li class="media">
-    <img src="{{Storage::url($product->image)}}" class="mr-3" id="imgMascota" alt="...">
+    <img src="{{Storage::url($prod->image)}}" class="mr-3" id="imgMascota" alt="...">
     <div class="media-body">
-      <h5 class="mt-0 mb-1">{{$product->brand}}</h5>
-      <p>{{$product->product_name}}</p>
-      <h4>${{$product->price_unit}}</h4>
-        <a href="/borrarCarrito/{{auth()->user()->id}}/{{$product->id}}" class="btn btn-primary">Eliminar del carro de compras</a>
+      <h5 class="mt-0 mb-1">{{$prod->brand}}</h5>
+      <p>{{$prod->product_name}}</p>
+      <h4>${{$prod->price_unit}}</h4>
+        <a href="/borrarCarrito/{{auth()->user()->id}}/{{$prod->id}}" class="btn btn-primary">Eliminar del carro de compras</a>
     </div>
   </li>
 
@@ -28,8 +28,8 @@
 @endforeach
 <br>
 <br>
-<div class="alert alert-success" role="alert"><h2>Total: ${{Auth::user()->products->sum('price_unit')}}</h2>
+<div class="alert alert-success" role="alert"><h2>Total: ${{Auth::user()->product->sum('price_unit')}}</h2>
 </div>
-<button type="button" id="finCompra" class="btn btn-primary" onClick="alert('¡Ha finalidado su compra!')">Finalizar Compra</button>
+<button type="button" id="finCompra" class="btn btn-primary">Finalizar Compra</button>
 
 @endsection

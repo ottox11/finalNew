@@ -83,7 +83,7 @@
 <footer>
   <hr>
     <div class=" container text-right align-bottom">
-    <p>Shopping Cart | © Copyright 2016, All Rights Reserved</p>
+    <p>Mundo Mascotas | © Copyright 2019, Toda la onda reservada</p>
     </div>
 </footer>
 </div>

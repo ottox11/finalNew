@@ -30,3 +30,21 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+public function validarDestroy(){
+  $.ajax({
+          type: 'GET',
+          url: '/admin/listado',
+          beforeSend: function () {
+              alert('Está seguro de querer borrar el producto " + {{product->product_name}} + "?" ');
+          },
+          success: function (respuesta) {
+              /*Esta respuesta te sugiero la mandes en JSON desde el
+                Controlador*/
+              alert('Soy la V ... ' + respuesta);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+             alert('ALV ocurrió un error PTM ' + jqXHR.responseText )
+          }
+      });
+}

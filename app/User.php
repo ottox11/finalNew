@@ -38,7 +38,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function products() {
+    public function product () {
 
        return $this->belongsToMany('App\Product')->withPivot('quantity');
     }
